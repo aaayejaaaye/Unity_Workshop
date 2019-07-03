@@ -20,8 +20,8 @@ public class GameController : MonoBehaviour
     private InstructionData currentInstructionData; //
     private Instructions[] instructionPool; //
 
-    private bool isRoundActive; // are steps active
-    private float time; //lATER
+    private bool isRoundActive; // are steps active not used yet
+    private float time; //LATER
     private int instructionIndex;//
     
     private List<GameObject> stepButtonGameObjects = new List<GameObject>();
@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         dataController = FindObjectOfType<DataController>(); //its persistant so data controller will always be there
         currentInstructionData = dataController.GetCurrentInstructionData(); //which instruction are we on
         instructionPool = currentInstructionData.instructions; //store instruction in pool
@@ -66,6 +67,7 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("HUD");
     }
+    //not used yet
     public void EndTask()
     {
         isRoundActive = false;

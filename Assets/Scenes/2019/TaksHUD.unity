@@ -1241,9 +1241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionDisplayText: {fileID: 2064421212}
   stepButtonObjectPool: {fileID: 1568919377}
-  stepButtonParent: {fileID: 9130917105449392208, guid: c205600bd21584b4d8e9ad23b67a2ba4,
-    type: 3}
-  instructionDisplay: {fileID: 2064421210}
+  stepButtonParent: {fileID: 1960510012}
+  instructionDisplay: {fileID: 518025499}
   roundEndDisplay: {fileID: 134812108}
 --- !u!1 &1735066909
 GameObject:
@@ -1464,7 +1463,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Instructions
 --- !u!222 &2064421213
 CanvasRenderer:
   m_ObjectHideFlags: 0
