@@ -7,4 +7,5 @@ public class Steps
 {
     public string stepsText; //step instruction
     public Sprite stepImg; //Image with the step
+    
 }

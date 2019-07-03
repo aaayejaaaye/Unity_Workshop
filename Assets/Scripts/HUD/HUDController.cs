@@ -7,6 +7,6 @@ public class HUDController : MonoBehaviour
 {
    public void StartGame()
     {
-        SceneManager.LoadScene("Controller");
+        SceneManager.LoadScene("taksHUD");
     }
 }
