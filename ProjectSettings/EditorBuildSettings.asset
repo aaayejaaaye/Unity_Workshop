@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2019/HUD.unity
     guid: 4a63f89a395616544a0ef749d21a6c66
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/2019/TaksHUD.unity
-    guid: 937141a24b7e0ec428e3e9ec6ee59404
+    path: Assets/Scenes/2019/TaskHUD.unity
+    guid: 9df50ccdfd512bc4bbeca2cf83b2f0b4
   m_configObjects: {}

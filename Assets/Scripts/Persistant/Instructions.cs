@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// How to Download Unity
+/// </summary>
 [System.Serializable]
 public class Instructions 
 {

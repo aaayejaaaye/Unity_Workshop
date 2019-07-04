@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;//Acess editor Window
 using System.IO;// works with files
-
+/// <summary>
+/// 
+/// </summary>
 public class GameDataEditor : EditorWindow 
 {
     public GameData gameData; //holds JSON info
-    private string gameDataProjectFilePath = "/StreamingAssets/data/json"; //json file path
+    private string gameDataProjectFilePath = "/StreamingAssets/data.json"; //json file path
 
     [MenuItem("Window/Game Data Editor")] //create a menu item attribute(GUI)
     static void Init()
     {
         EditorWindow.GetWindow(typeof(GameDataEditor)).Show(); //
+
+
     }
 
     void OnGUI()//similar to update

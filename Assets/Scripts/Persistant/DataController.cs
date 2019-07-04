@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine; //to use unity API
 using UnityEngine.SceneManagement; //for loading scene
 using System.IO;// for files
-
+/// <summary>
+/// main purpose is to supply the instruction Data when we access scene
+/// </summary>
 //manages all behavior
 public class DataController : MonoBehaviour
-{   //was public but now private
+{   //was public but now private, if you want variables visible to the editor make public
     private InstructionData[] allInstructionData; // size of the Instruction set // set to private because of json
     private string gameDataFileName = "data.json";
     // Start is called before the first frame update
@@ -17,9 +19,9 @@ public class DataController : MonoBehaviour
         SceneManager.LoadScene ("HUD");
     }
 
-    public InstructionData GetCurrentInstructionData()
+    public InstructionData GetCurrentInstructionData()//return the first set of the current round/ie loads instructiondata array
     {
-        return allInstructionData[0];// eventually we can use this to determine other data types from the round
+        return allInstructionData[0];
     }
     private void LoadGameData()
     {
@@ -37,8 +39,5 @@ public class DataController : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
