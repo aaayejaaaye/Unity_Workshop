@@ -29,7 +29,7 @@ public class DataController : MonoBehaviour
         if (File.Exists(filePath))
             {
             string dataAsJson = File.ReadAllText(filePath); //read file store it as a string
-            GameData loadedData = JsonUtility.FromJson<GameData>(dataAsJson);//take string, deserialize it into a GameData object
+            GameData loadedData = JsonUtility.FromJson<GameData>(dataAsJson);//// Pass the json to JsonUtility, and tell it to create a GameData object from it. take string, deserialize it into a GameData object
 
             allInstructionData = loadedData.allInstructionData; //make it available to use in the game (see datacontroller and gamedata; same variable)
         }

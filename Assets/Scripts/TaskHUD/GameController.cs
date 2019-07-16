@@ -14,8 +14,9 @@ public class GameController : MonoBehaviour
     public SimpleObjectPool stepButtonObjectPool; //
     public Transform stepButtonParent; //
     public GameObject instructionDisplay; //
-    public GameObject roundEndDisplay; //gO bACK TO MAUN mENU
-
+    public GameObject roundEndDisplay; //gO bACK TO MAiN mENU
+    public GameObject nextInstruction;
+    public GameObject prevInstruction;
     private DataController dataController; //
     private InstructionData currentInstructionData; //
     private Instructions[] instructionPool; //
@@ -63,6 +64,23 @@ public class GameController : MonoBehaviour
             stepButtonGameObjects.RemoveAt(0);//remove from list of active
         }
     }
+    public void NextStep()
+    {   
+        if (instructionPool.Length > instructionIndex + 1)
+        {
+            instructionIndex++;
+            ShowInstruction();
+        }
+        else ReturntoMenu();
+
+    }
+    public void PreviousStep()
+    {
+        if (instructionPool.Length > instructionIndex + 1)
+        { instructionIndex--;
+            ShowInstruction();
+        }
+    }
     public void ReturntoMenu()
     {
         SceneManager.LoadScene("HUD");
@@ -77,6 +95,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

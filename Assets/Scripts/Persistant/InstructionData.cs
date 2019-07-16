@@ -7,7 +7,6 @@ using UnityEngine;
 /// ex: How to Use Unity
 /// </summary>
 [System.Serializable]
-
 public class InstructionData
 {
     public string nameofInstructionSet; //name of instruction set

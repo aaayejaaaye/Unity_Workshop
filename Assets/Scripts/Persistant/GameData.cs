@@ -8,8 +8,9 @@ using UnityEngine;
 public class GameData
 {
     public string nameGameData;// name of the Instruction Set
-
+    
     public InstructionData[] allInstructionData;// Loads instructionData
+     
 
 }
    

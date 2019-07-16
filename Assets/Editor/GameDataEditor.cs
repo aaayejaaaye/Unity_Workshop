@@ -23,7 +23,7 @@ public class GameDataEditor : EditorWindow
     {
         if (gameData != null) //is data loaded?
         {
-            SerializedObject serializedObject = new SerializedObject(this); //this = GmaeDataEditor
+            SerializedObject serializedObject = new SerializedObject(this); //this = GameDataEditor
             SerializedProperty serializedProperty = serializedObject.FindProperty("gameData"); // search through serialized object "gameData"
             EditorGUILayout.PropertyField(serializedProperty, true); //pass in serialized proerty to display children 
 
@@ -31,23 +31,29 @@ public class GameDataEditor : EditorWindow
 
             if (GUILayout.Button("Save data"))
             {
-                SaveGameData();
+                // SaveGameData();
+                SaveGameDataNew();
             }
         }
 
         if (GUILayout.Button("Load data"))
         {
-            LoadGameData();
+            // LoadGameData();
+            LoadGameDataNew();
+        }
+        if (GUILayout.Button("Create New"))
+        {
+            CreateNewDataNew();
         }
     }
 
-    private void LoadGameData()
+    private void LoadGameData()// see also in datacontroler.cs(similar)
     {
         string filePath = Application.dataPath + gameDataProjectFilePath; //
 
         if (File.Exists(filePath))
         {
-            string dataAsJson = File.ReadAllText(filePath); //read/convert as JSON 
+            string dataAsJson = File.ReadAllText(filePath); //read/convert a JSON 
             gameData = JsonUtility.FromJson<GameData>(dataAsJson); //Place into gamedata object
         }
         else
@@ -56,13 +62,43 @@ public class GameDataEditor : EditorWindow
         }
     }
 
+    private void LoadGameDataNew()
+    {
+        string filePath = EditorUtility.OpenFilePanel("Select localization data file", Application.streamingAssetsPath, "json");
+
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+
+            gameData = JsonUtility.FromJson<GameData>(dataAsJson);
+        }
+    }
+
     private void SaveGameData()
     {
 
-        string dataAsJson = JsonUtility.ToJson(gameData);//serializee form JSON store as string
+        string dataAsJson = JsonUtility.ToJson(gameData);//serializee from gd to JSON store as string
 
         string filePath = Application.dataPath + gameDataProjectFilePath;
-        File.WriteAllText(filePath, dataAsJson);//loads or overites
+        File.WriteAllText(filePath, dataAsJson);//loads or overites; writes to filePath 
 
     }
+
+
+    private void SaveGameDataNew()
+    {
+        string filePath = EditorUtility.SaveFilePanel("Save localization data file", Application.streamingAssetsPath, "", "json");
+
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            string dataAsJson = JsonUtility.ToJson(gameData);
+            File.WriteAllText(filePath, dataAsJson);
+        }
+    }
+
+    private void CreateNewDataNew()
+    {
+        gameData = new GameData();
+    }
+
 }
