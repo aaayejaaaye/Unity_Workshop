@@ -700,8 +700,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 432054994}
-        m_MethodName: getStepMethods
+      - m_Target: {fileID: 1624997608}
+        m_MethodName: NextStep
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1017,8 +1017,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1013159669}
-        m_MethodName: getStepMethods
+      - m_Target: {fileID: 1624997608}
+        m_MethodName: PreviousStep
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

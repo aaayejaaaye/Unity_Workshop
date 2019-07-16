@@ -76,7 +76,7 @@ public class GameController : MonoBehaviour
     }
     public void PreviousStep()
     {
-        if (instructionPool.Length > instructionIndex + 1)
+        if (instructionPool.Length > instructionIndex - 1)
         { instructionIndex--;
             ShowInstruction();
         }
